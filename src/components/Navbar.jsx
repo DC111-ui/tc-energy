@@ -13,12 +13,12 @@ function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-sm">
-      <nav className="container-page flex items-center justify-between gap-4 py-4">
+      <nav className="container-page flex min-h-[100px] items-center justify-between gap-4 py-2">
         <NavLink to="/" className="inline-flex items-center" aria-label="TC Energy & Logistics Home">
           <img
             src={useFallbackLogo ? logo : logoTransparent}
             alt="TC Energy & Logistics"
-            className="h-16 w-auto object-contain md:h-20"
+            className="h-24 w-auto object-contain md:h-28"
             onError={() => setUseFallbackLogo(true)}
           />
         </NavLink>
