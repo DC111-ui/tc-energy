@@ -1,4 +1,7 @@
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import logo from '../assets/logo.png';
+import logoTransparent from '../assets/logo-transparent.png';
 
 const linkClass = ({ isActive }) =>
   `rounded-md px-3 py-2 text-sm font-medium transition ${
@@ -6,11 +9,18 @@ const linkClass = ({ isActive }) =>
   }`;
 
 function Navbar() {
+  const [useFallbackLogo, setUseFallbackLogo] = useState(false);
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-sm">
-      <nav className="container-page flex h-20 items-center justify-between">
-        <NavLink to="/" className="text-lg font-bold text-secondary sm:text-xl">
-          TC Energy & Logistics
+      <nav className="container-page flex h-20 items-center justify-between gap-4">
+        <NavLink to="/" className="inline-flex items-center" aria-label="TC Energy & Logistics Home">
+          <img
+            src={useFallbackLogo ? logo : logoTransparent}
+            alt="TC Energy & Logistics"
+            className="h-10 w-auto sm:h-12"
+            onError={() => setUseFallbackLogo(true)}
+          />
         </NavLink>
         <div className="flex items-center gap-2 sm:gap-3">
           <NavLink to="/" className={linkClass}>
