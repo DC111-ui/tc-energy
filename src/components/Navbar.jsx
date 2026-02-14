@@ -16,6 +16,9 @@ function Navbar() {
           <NavLink to="/" className={linkClass}>
             Home
           </NavLink>
+          <NavLink to="/about" className={linkClass}>
+            About
+          </NavLink>
           <NavLink to="/services" className={linkClass}>
             Services
           </NavLink>
