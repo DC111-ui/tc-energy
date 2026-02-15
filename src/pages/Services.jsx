@@ -1,10 +1,5 @@
-const services = [
-  'Contract Logistics',
-  'Couriering',
-  'Storage Solutions',
-  'Move-Outs',
-  'Procurement Hub (Machinery, Electronics, Building Materials, Car Spares).',
-];
+import { Link } from 'react-router-dom';
+import { services } from '../data/servicesData';
 
 function Services() {
   return (
@@ -16,8 +11,15 @@ function Services() {
 
       <ul className="mt-8 space-y-4">
         {services.map((service) => (
-          <li key={service} className="rounded-lg border border-slate-200 bg-white px-5 py-4 text-slate-800 shadow-sm">
-            {service}
+          <li key={service.slug} className="rounded-lg border border-slate-200 bg-white shadow-sm transition hover:shadow-soft">
+            <Link
+              to={`/services/${service.slug}`}
+              className="block px-5 py-4 text-slate-800"
+              aria-label={`View ${service.title} details`}
+            >
+              <h2 className="text-lg font-semibold text-secondary">{service.title}</h2>
+              <p className="mt-1 text-sm text-slate-600">{service.description}</p>
+            </Link>
           </li>
         ))}
       </ul>
