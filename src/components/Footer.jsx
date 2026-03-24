@@ -105,6 +105,11 @@ function Footer() {
         <div className="container-page text-center text-xs text-white/70">
           <p>© 2026 TC Energy & Logistics</p>
           <p>Logistics • Storage • Courier Services</p>
+          <p className="mt-3 text-[11px] text-white/50">
+            TC Energy & Logistics (Pty) Ltd
+            <br />
+            Reg No: 2023/000375/07
+          </p>
         </div>
       </div>
     </footer>
