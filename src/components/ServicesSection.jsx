@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const serviceCards = [
@@ -47,32 +48,61 @@ function ServicesSection() {
         </h2>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+      <motion.div
+        className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.15 }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: 0.12,
+            },
+          },
+        }}
+      >
         {serviceCards.map(({ slug, title, description, icon, image }) => (
-          <Link
+          <motion.div
             key={title}
-            to={`/services/${slug}`}
-            className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-soft"
+            variants={{
+              hidden: { opacity: 0, y: 24 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.55, ease: 'easeOut' },
+              },
+            }}
+            whileHover={{ y: -8, scale: 1.015 }}
           >
-            <div className="relative h-36 overflow-hidden">
-              <img
-                src={image}
-                alt={`${title} service`}
-                className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-secondary/70 via-secondary/25 to-transparent" />
-              <span className="absolute bottom-3 left-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white/95 text-lg shadow">
-                {icon}
-              </span>
-            </div>
-            <article className="p-5">
-              <h3 className="text-lg font-semibold text-secondary">{title}</h3>
-              <p className="mt-2 text-sm leading-6 text-slate-600">{description}</p>
-            </article>
-          </Link>
+            <Link
+              to={`/services/${slug}`}
+              className="group block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:shadow-soft"
+            >
+              <div className="relative h-36 overflow-hidden">
+                <img
+                  src={image}
+                  alt={`${title} service`}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-secondary/70 via-secondary/25 to-transparent" />
+                <motion.span
+                  className="absolute bottom-3 left-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white/95 text-lg shadow"
+                  whileHover={{ rotate: -7, y: -2 }}
+                  transition={{ duration: 0.25, ease: 'easeOut' }}
+                >
+                  {icon}
+                </motion.span>
+              </div>
+              <article className="p-5">
+                <h3 className="text-lg font-semibold text-secondary">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{description}</p>
+              </article>
+            </Link>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }
