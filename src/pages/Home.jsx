@@ -54,14 +54,15 @@ function Home() {
             transition={{ duration: 0.75, ease: 'easeOut' }}
             className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl"
           >
-            The Future of Logistics & Distribution
+            Premium Logistics That Keeps Business Moving Forward
           </motion.h1>
           <motion.p
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
             className="mt-5 max-w-2xl text-base text-green-50 sm:text-lg"
           >
-            Reliable storage, courier, procurement, and move-out services designed to keep your operations running smoothly.
+            Reliable transport, storage, procurement, and move-out operations managed with precision, safety, and
+            clear communication at every stage.
           </motion.p>
           <motion.div
             variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}
