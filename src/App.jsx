@@ -5,6 +5,7 @@ import WhatsAppButton from './components/WhatsAppButton';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
+import FarmersHub from './pages/FarmersHub';
 import ServiceDetail from './pages/ServiceDetail';
 import Services from './pages/Services';
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/farmers-hub" element={<FarmersHub />} />
           <Route path="/services/:serviceSlug" element={<ServiceDetail />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

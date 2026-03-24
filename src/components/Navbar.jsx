@@ -36,6 +36,9 @@ function Navbar() {
           <NavLink to="/services" className={linkClass}>
             Services
           </NavLink>
+          <NavLink to="/farmers-hub" className={linkClass}>
+            Farmer’s Hub
+          </NavLink>
           <NavLink to="/contact" className={linkClass}>
             Contact
           </NavLink>
