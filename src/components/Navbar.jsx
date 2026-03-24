@@ -13,14 +13,18 @@ function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-sm">
-      <nav className="container-page flex min-h-[100px] items-center justify-between gap-4 py-2">
-        <NavLink to="/" className="inline-flex items-center" aria-label="TC Energy & Logistics Home">
-          <img
-            src={useFallbackLogo ? logo : logoTransparent}
-            alt="TC Energy & Logistics"
-            className="h-24 w-auto object-contain md:h-28"
-            onError={() => setUseFallbackLogo(true)}
-          />
+      <nav className="container-page flex min-h-[108px] items-center justify-between gap-4 py-3">
+        <NavLink to="/" className="inline-flex items-center rounded-xl bg-white px-3 py-2" aria-label="TC Energy & Logistics Home">
+          <picture>
+            {/* Keeps room for future SVG source while preserving current PNG assets. */}
+            <source srcSet={logoTransparent} type="image/png" />
+            <img
+              src={useFallbackLogo ? logo : logoTransparent}
+              alt="TC Energy & Logistics"
+              className="h-24 w-auto object-contain drop-shadow-sm md:h-28"
+              onError={() => setUseFallbackLogo(true)}
+            />
+          </picture>
         </NavLink>
         <div className="flex items-center gap-2 sm:gap-3">
           <NavLink to="/" className={linkClass}>

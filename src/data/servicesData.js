@@ -3,28 +3,26 @@ export const services = [
     slug: 'contract-logistics',
     title: 'Contract Logistics',
     description:
-      'End-to-end coordination for inventory, transport scheduling, and deliveries tailored to your business operations.',
+      'End-to-end logistics support including supplier coordination, bulk handling, and last-mile delivery.',
     image: '/images/services/contract-logistics.jpg',
   },
   {
     slug: 'couriering',
     title: 'Couriering',
-    description:
-      'Fast and dependable courier services for documents, parcels, and sensitive items with clear delivery tracking.',
+    description: 'Fast and secure courier services with same-day and scheduled delivery options.',
     image: '/images/services/couriering.jpg',
   },
   {
     slug: 'storage-solutions',
-    title: 'Storage Solutions',
+    title: 'Storage',
     description:
-      'Secure and flexible storage options for short-term and long-term needs, including organized retrieval support.',
+      'Flexible short and long-term storage solutions with secure facilities and efficient inventory handling.',
     image: '/images/services/storage-solutions.jpg',
   },
   {
     slug: 'move-outs',
     title: 'Move-Outs',
-    description:
-      'Professional residential and commercial move-out services with careful packing, handling, and transport.',
+    description: 'Professional residential and student move-out services including packing and transport.',
     image: '/images/services/move-outs.jpg',
   },
   {
