@@ -106,7 +106,7 @@ function About() {
           <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Who We Are</h2>
           <div className="mt-5 space-y-4 text-sm leading-7 text-slate-600 sm:text-base">
             <p>
-              TC Energy & Logistics is a South African company based in Pretoria, founded in 2021 by a group of
+              TC Energy & Logistics is a South African company based in Pretoria, founded in 2023 by a group of
               entrepreneurs.
             </p>
             <p>
@@ -154,6 +154,28 @@ function About() {
           “To streamline supply chain operations for our clients by offering innovative and efficient logistics
           solutions that enhance business productivity and customer satisfaction.”
         </p>
+      </section>
+
+      <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
+        <div className="flex items-start gap-3">
+          <span
+            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary"
+            aria-hidden="true"
+          >
+            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="m9 12 2 2 4-4" />
+              <path d="M12 3 5 6v6c0 5 3.4 8.6 7 9 3.6-.4 7-4 7-9V6l-7-3Z" />
+            </svg>
+          </span>
+          <div>
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Registered & Trusted</h2>
+            <p className="mt-3 text-sm leading-7 text-slate-600 sm:text-base">
+              TC Energy & Logistics is a registered South African company (CIPC), operating with full compliance and
+              a commitment to reliable logistics services.
+            </p>
+            <p className="mt-3 text-sm font-semibold text-slate-800 sm:text-base">Registration Number: 2023/000375/07</p>
+          </div>
+        </div>
       </section>
 
       <section className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
@@ -219,7 +241,7 @@ function About() {
 
       <section className="space-y-6">
         <div className="max-w-2xl">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Why Choose Us</h2>
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Our Core Strengths</h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {whyChooseUs.map((item) => (
@@ -227,6 +249,32 @@ function About() {
               <p className="text-lg font-semibold text-slate-800">{item}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+        <div className="max-w-2xl">
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Why Choose Us</h2>
+          <ul className="mt-4 space-y-3 text-sm text-slate-700 sm:text-base">
+            <li className="flex items-start gap-3">
+              <span className="text-primary" aria-hidden="true">
+                ✓
+              </span>
+              <span>Registered with CIPC</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-primary" aria-hidden="true">
+                ✓
+              </span>
+              <span>Compliant South African business</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-primary" aria-hidden="true">
+                ✓
+              </span>
+              <span>Operating since 2023</span>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -254,7 +302,7 @@ function About() {
         >
           Request a Quote
         </a>
-        <p className="mt-4 text-xs uppercase tracking-wider text-green-100">Pretoria, South Africa • Established 2021</p>
+        <p className="mt-4 text-xs uppercase tracking-wider text-green-100">Pretoria, South Africa • Established 2023</p>
       </section>
     </div>
   );
