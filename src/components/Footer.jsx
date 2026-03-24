@@ -25,6 +25,7 @@ const quickLinks = [
   { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
   { label: 'Services', to: '/services' },
+  { label: 'Farmer’s Hub', to: '/farmers-hub' },
   { label: 'Contact', to: '/contact' },
 ];
 
