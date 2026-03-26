@@ -1,3 +1,4 @@
+import { usePageMeta } from '../hooks/usePageMeta';
 const serviceItems = [
   {
     title: 'Contract logistics',
@@ -80,12 +81,13 @@ const clientSegments = [
 const whyChooseUs = ['Efficiency', 'Reliability', 'Flexibility', 'Affordability', 'Quality', 'Accessibility'];
 
 function About() {
+  usePageMeta({ title: 'About Us', description: 'Learn about TC Energy & Logistics — a South African logistics company based in Pretoria, founded in 2023.' });
   return (
     <div className="container-page space-y-14 py-12 lg:space-y-20">
       <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-secondary to-green-800 px-6 py-16 text-white shadow-soft sm:px-10 lg:px-16">
         <img
-          src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1600&q=80"
-          alt="Warehouse shelves and distribution operations"
+          src="/images/truck-highway-sunset.webp"
+          alt="TC Energy truck on South African highway"
           className="absolute inset-0 h-full w-full object-cover opacity-25"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-secondary/85 via-secondary/80 to-green-800/75" />
@@ -106,23 +108,28 @@ function About() {
           <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Who We Are</h2>
           <div className="mt-5 space-y-4 text-sm leading-7 text-slate-600 sm:text-base">
             <p>
-              TC Energy & Logistics is a South African company based in Pretoria, founded in 2023 by a group of
-              entrepreneurs.
+              TC Energy & Logistics is a South African logistics company based in Pretoria, founded in 2023 with a
+              clear commitment to delivering dependable, high quality service.
             </p>
             <p>
-              The company focuses on distributing medium to large consignments at cost-effective prices, addressing
-              logistics challenges such as delays and poor service delivery.
+              We specialise in the movement of medium to large consignments, offering cost effective solutions without
+              compromising on efficiency or professionalism.
             </p>
             <p>
-              We provide efficient and reliable logistics solutions tailored to businesses across various sectors.
+              Our approach is rooted in reliability, attention to detail, and a deep understanding of client needs
+              ensuring every delivery is handled with precision and care.
+            </p>
+            <p>
+              At our core, we are driven by service providing tailored logistics solutions that businesses can trust
+              across various sectors.
             </p>
           </div>
         </div>
 
         <div className="overflow-hidden rounded-2xl border border-slate-200">
           <img
-            src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=1200&q=80"
-            alt="Logistics team discussing shipment planning"
+            src="/images/brand-network.webp"
+            alt="TC Energy warehouse team at work"
             className="h-full w-full object-cover"
             loading="lazy"
           />
@@ -137,6 +144,14 @@ function About() {
             movement through practical logistics support.
           </p>
         </div>
+        <div className="overflow-hidden rounded-2xl border border-slate-200">
+          <img
+            src="/images/operations-office.webp"
+            alt="TC Energy truck delivery at client premises"
+            className="h-56 w-full object-cover sm:h-72"
+            loading="lazy"
+          />
+        </div>
         <div className="grid gap-6 md:grid-cols-2">
           {serviceItems.map((service) => (
             <article key={service.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -148,12 +163,24 @@ function About() {
         </div>
       </section>
 
-      <section className="rounded-3xl bg-white p-8 text-center shadow-sm sm:p-10">
-        <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Our Mission</h2>
-        <p className="mx-auto mt-5 max-w-4xl text-base leading-8 text-slate-600 sm:text-lg">
-          “To streamline supply chain operations for our clients by offering innovative and efficient logistics
-          solutions that enhance business productivity and customer satisfaction.”
-        </p>
+      <section className="overflow-hidden rounded-3xl bg-white shadow-sm">
+        <div className="grid md:grid-cols-2">
+          <div className="overflow-hidden">
+            <img
+              src="/images/brand-network.webp"
+              alt="TC Energy & Logistics brand and network"
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div className="flex flex-col justify-center p-8 sm:p-10">
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Our Mission</h2>
+            <p className="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
+              &ldquo;To streamline supply chain operations for our clients by offering innovative and efficient logistics
+              solutions that enhance business productivity and customer satisfaction.&rdquo;
+            </p>
+          </div>
+        </div>
       </section>
 
       <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
@@ -180,8 +207,8 @@ function About() {
 
       <section className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
         <img
-          src="https://images.unsplash.com/photo-1565891741441-64926e441838?auto=format&fit=crop&w=1600&q=80"
-          alt="Warehouse inventory operations"
+          src="/images/aerial-highway.webp"
+          alt="TC Energy truck being loaded at client warehouse"
           className="h-48 w-full object-cover sm:h-60"
           loading="lazy"
         />
@@ -217,8 +244,8 @@ function About() {
       <section className="grid items-center gap-10 rounded-3xl bg-white p-6 shadow-sm sm:p-10 lg:grid-cols-2 lg:p-12">
         <div className="overflow-hidden rounded-2xl border border-slate-200">
           <img
-            src="https://images.unsplash.com/photo-1586880244406-556ebe35f282?auto=format&fit=crop&w=1200&q=80"
-            alt="Delivery operations and route coordination"
+            src="/images/delivery-warehouse.webp"
+            alt="TC Energy residential delivery in progress"
             className="h-full w-full object-cover"
             loading="lazy"
           />
@@ -278,7 +305,14 @@ function About() {
         </div>
       </section>
 
-      <section className="rounded-3xl border border-green-200 bg-green-50 p-6 sm:p-8 lg:p-10">
+      <section className="overflow-hidden rounded-3xl border border-green-200 bg-green-50">
+        <img
+          src="/images/residential-service-delivery.webp"
+          alt="TC Energy driver completing a customer delivery"
+          className="h-56 w-full object-cover sm:h-64"
+          loading="lazy"
+        />
+        <div className="p-6 sm:p-8 lg:p-10">
         <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">How We Are Different</h2>
         <p className="mt-4 text-sm leading-7 text-slate-700 sm:text-base">
           Large logistics companies often fail smaller clients because of scale limitations, slow response cycles, and
@@ -289,6 +323,7 @@ function About() {
           <li>• Better communication and direct client support</li>
           <li>• Practical service delivery for small-to-medium clients</li>
         </ul>
+        </div>
       </section>
 
       <section className="rounded-3xl bg-secondary px-6 py-12 text-center text-white shadow-soft sm:px-10">

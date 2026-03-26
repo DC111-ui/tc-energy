@@ -1,8 +1,11 @@
+import { usePageMeta } from '../hooks/usePageMeta';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import CTASection from '../components/CTASection';
 import HowItWorksSection from '../components/HowItWorksSection';
 import ServicesSection from '../components/ServicesSection';
+import StatsBar from '../components/StatsBar';
+import TestimonialsSection from '../components/TestimonialsSection';
 import TrustedBySection from '../components/TrustedBySection';
 import WhyChooseUsSection from '../components/WhyChooseUsSection';
 
@@ -16,23 +19,15 @@ const sectionReveal = {
 };
 
 function Home() {
+  usePageMeta({ title: 'Home', description: 'TC Energy & Logistics — Pretoria based logistics company offering transport, storage, couriering and procurement across South Africa. Est. 2023.' });
   return (
     <div className="container-page space-y-16 py-12 lg:space-y-20">
       <section className="relative flex min-h-[calc(100vh-8rem)] items-end overflow-hidden rounded-3xl px-6 py-16 text-white shadow-soft sm:px-10 lg:px-16">
-        <video
+        <img
+          src="/images/truck-highway-sunset.webp"
+          alt="TC Energy truck on the open road"
           className="absolute inset-0 h-full w-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="none"
-          poster="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1600&q=80"
-        >
-          <source
-            src="https://player.vimeo.com/external/434045526.sd.mp4?s=57f9d11f8f8829f96af11cf5003ca95a7c95fcf8&profile_id=139&oauth2_token_id=57447761"
-            type="video/mp4"
-          />
-        </video>
+        />
         <div className="absolute inset-0 bg-slate-950/65" />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-900/65 to-slate-900/30" />
 
@@ -89,6 +84,8 @@ function Home() {
         </motion.div>
       </section>
 
+      <StatsBar />
+
       <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionReveal}>
         <ServicesSection />
       </motion.div>
@@ -102,8 +99,8 @@ function Home() {
       >
         <div className="grid gap-0 md:grid-cols-2">
           <img
-            src="https://images.unsplash.com/photo-1586528116493-2d5b58b0d28e?auto=format&fit=crop&w=1600&q=80"
-            alt="Warehouse team handling inventory"
+            src="/images/brand-network.webp"
+            alt="TC Energy & Logistics operations office"
             className="h-56 w-full object-cover md:h-full"
             loading="lazy"
           />
@@ -134,6 +131,9 @@ function Home() {
       </motion.div>
       <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionReveal}>
         <WhyChooseUsSection />
+      </motion.div>
+      <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionReveal}>
+        <TestimonialsSection />
       </motion.div>
       <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionReveal}>
         <CTASection />

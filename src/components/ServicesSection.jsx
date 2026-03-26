@@ -1,42 +1,14 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { services } from '../data/servicesData';
 
-const serviceCards = [
-  {
-    slug: 'contract-logistics',
-    title: 'Contract Logistics',
-    description:
-      'End-to-end logistics support including supplier coordination, bulk handling, and last-mile delivery.',
-    icon: '🚛',
-    image:
-      'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    slug: 'couriering',
-    title: 'Couriering',
-    description: 'Fast and secure courier services with same-day and scheduled delivery options.',
-    icon: '📦',
-    image:
-      'https://images.unsplash.com/photo-1611293388250-580b08c4a145?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    slug: 'storage-solutions',
-    title: 'Storage',
-    description:
-      'Flexible short and long-term storage solutions with secure facilities and efficient inventory handling.',
-    icon: '🏬',
-    image:
-      'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    slug: 'move-outs',
-    title: 'Move-Outs',
-    description: 'Professional residential and student move-out services including packing and transport.',
-    icon: '🏠',
-    image:
-      'https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&w=900&q=80',
-  },
-];
+const icons = {
+  'contract-logistics': '🚛',
+  'couriering': '📦',
+  'storage-solutions': '🏬',
+  'move-outs': '🏠',
+  'procurement-hub': '🔧',
+};
 
 function ServicesSection() {
   return (
@@ -49,30 +21,16 @@ function ServicesSection() {
       </div>
 
       <motion.div
-        className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4"
+        className="grid gap-6 sm:grid-cols-2 xl:grid-cols-5"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.15 }}
-        variants={{
-          hidden: {},
-          visible: {
-            transition: {
-              staggerChildren: 0.12,
-            },
-          },
-        }}
+        variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
       >
-        {serviceCards.map(({ slug, title, description, icon, image }) => (
+        {services.map(({ slug, title, description, image }) => (
           <motion.div
-            key={title}
-            variants={{
-              hidden: { opacity: 0, y: 24 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: { duration: 0.55, ease: 'easeOut' },
-              },
-            }}
+            key={slug}
+            variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } } }}
             whileHover={{ y: -8, scale: 1.015 }}
           >
             <Link
@@ -92,7 +50,7 @@ function ServicesSection() {
                   whileHover={{ rotate: -7, y: -2 }}
                   transition={{ duration: 0.25, ease: 'easeOut' }}
                 >
-                  {icon}
+                  {icons[slug]}
                 </motion.span>
               </div>
               <article className="p-5">

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png';
+import logoHeader from '../assets/logo-header.png';
 
 const FacebookIcon = (props) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
@@ -30,9 +30,7 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  { label: 'Facebook', href: '#', icon: FacebookIcon },
-  { label: 'Instagram', href: '#', icon: InstagramIcon },
-  { label: 'WhatsApp', href: '#', icon: WhatsAppIcon },
+  { label: 'WhatsApp', href: 'https://wa.me/27617037902', icon: WhatsAppIcon },
 ];
 
 function Footer() {
@@ -42,9 +40,9 @@ function Footer() {
         <div className="grid grid-cols-1 gap-10 text-center md:grid-cols-3 md:gap-8 md:text-left">
           <div className="space-y-4 md:pr-6">
             <img
-              src={logo}
+              src={logoHeader}
               alt="TC Energy & Logistics"
-              className="mx-auto h-14 w-auto rounded-md bg-white p-1 md:mx-0"
+              className="mx-auto h-12 w-auto rounded-md bg-white px-2 py-1 md:mx-0"
             />
             <p className="text-sm leading-relaxed text-white/80">
               Reliable logistics, storage, and courier solutions across South Africa.
@@ -77,7 +75,12 @@ function Footer() {
               </p>
               <p>
                 <a href="https://wa.me/27617037902" className="transition-colors duration-300 hover:text-primary">
-                  +27 61 703 7902
+                  +27 61 703 7902 (SA)
+                </a>
+              </p>
+              <p>
+                <a href="tel:+2632226564" className="transition-colors duration-300 hover:text-primary">
+                  +263 222 6564 (Zimbabwe)
                 </a>
               </p>
             </div>
@@ -103,12 +106,10 @@ function Footer() {
 
       <div className="border-t border-white/15 py-4">
         <div className="container-page text-center text-xs text-white/70">
-          <p>© 2026 TC Energy & Logistics</p>
-          <p>Logistics • Storage • Courier Services</p>
+          <p>© 2026 TC Energy & Logistics (Pty) Ltd</p>
+          <p className="mt-1">Logistics • Storage • Courier Services • Est. 2023</p>
           <p className="mt-3 text-[11px] text-white/50">
-            TC Energy & Logistics (Pty) Ltd
-            <br />
-            Reg No: 2023/000375/07
+            Reg No: 2023/000375/07 · Pretoria, South Africa
           </p>
         </div>
       </div>
