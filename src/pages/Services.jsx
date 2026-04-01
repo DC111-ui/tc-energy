@@ -19,9 +19,9 @@ function Services() {
           src="/images/aerial-highway.webp"
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover opacity-20"
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-55"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 via-secondary/80 to-green-800/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary/55 via-secondary/50 to-green-800/45" />
         <div className="relative max-w-3xl">
           <p className="mb-3 inline-flex rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-orange-100">
             What We Offer

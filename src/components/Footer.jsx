@@ -104,13 +104,20 @@ function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/15 py-4">
-        <div className="container-page text-center text-xs text-white/70">
-          <p>© 2026 TC Energy & Logistics (Pty) Ltd</p>
-          <p className="mt-1">Logistics • Storage • Courier Services • Est. 2023</p>
-          <p className="mt-3 text-[11px] text-white/50">
-            Reg No: 2023/000375/07 · Pretoria, South Africa
-          </p>
+      <div className="border-t border-white/15 py-5">
+        <div className="container-page space-y-3 text-center text-xs text-white/70">
+          <p className="text-[11px] text-white/40">Registered in South Africa | POPIA Compliant</p>
+          <p>© 2026 TC Energy & Logistics (Pty) Ltd · Logistics • Storage • Courier Services • Est. 2023</p>
+          <p className="text-[11px] text-white/50">Reg No: 2023/000375/07 · Pretoria, South Africa</p>
+          <nav aria-label="Legal links" className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[11px] text-white/50">
+            <Link to="/terms" className="transition-colors hover:text-white/80">Terms & Conditions</Link>
+            <span className="text-white/25">|</span>
+            <Link to="/privacy" className="transition-colors hover:text-white/80">Privacy Policy</Link>
+            <span className="text-white/25">|</span>
+            <Link to="/disclaimer" className="transition-colors hover:text-white/80">Disclaimer</Link>
+            <span className="text-white/25">|</span>
+            <Link to="/refund-policy" className="transition-colors hover:text-white/80">Refund Policy</Link>
+          </nav>
         </div>
       </div>
     </footer>

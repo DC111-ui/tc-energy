@@ -206,10 +206,13 @@ function FarmersHub() {
 
       {/* Hero */}
       <section className="relative overflow-hidden rounded-3xl px-6 py-20 text-white shadow-soft sm:px-10 lg:px-16">
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary via-green-800 to-secondary" />
-        <div className="absolute inset-0 opacity-10"
-          style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, #f97316 0%, transparent 50%), radial-gradient(circle at 80% 20%, #16a34a 0%, transparent 40%)' }}
+        <img
+          src="/images/farmers-hub-new.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover object-center"
         />
+        <div className="absolute inset-0 bg-gradient-to-br from-secondary/55 via-green-800/50 to-secondary/45" />
         <div className="relative max-w-3xl">
           <p className="mb-3 inline-flex rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-orange-100">
             Additional Service

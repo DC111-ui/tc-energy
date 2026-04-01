@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const stats = [
-  { value: 50, suffix: '+', label: 'Clients Served' },
+  { value: 5033, suffix: '', label: 'Clients Served' },
   { value: 8, suffix: '+', label: 'Partner Brands' },
   { value: 4, suffix: '', label: 'Core Services' },
   { value: 3, suffix: ' Yrs', label: 'In Operation' },
@@ -38,10 +38,11 @@ function FlipCounter({ value, suffix }) {
         if (entry.isIntersecting && !started.current) {
           started.current = true;
           let current = 0;
-          const frames = Math.max(value * 2, 20);
-          const interval = 900 / frames;
+          const totalFrames = Math.min(value, 60);
+          const step = Math.ceil(value / totalFrames);
+          const interval = 900 / totalFrames;
           const timer = setInterval(() => {
-            current += 1;
+            current = Math.min(current + step, value);
             setCount(current);
             if (current >= value) clearInterval(timer);
           }, interval);

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { usePageMeta } from '../hooks/usePageMeta';
 
 const initialForm = { name: '', email: '', phone: '', service: '', message: '' };
@@ -68,19 +69,14 @@ function Contact() {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setStatus('loading');
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      });
-      if (!res.ok) throw new Error();
-    } catch {
-      // Fallback for static/demo environments
-    }
+    const subject = encodeURIComponent('New Website Enquiry – TC Energy');
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nService: ${form.service}\nMessage: ${form.message}`
+    );
+    window.location.href = `mailto:info@tcenergy.co.za?subject=${subject}&body=${body}`;
     setForm(initialForm);
     setStatus('success');
   };
@@ -97,9 +93,9 @@ function Contact() {
           src="/images/couriering-customer-delivery.webp"
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover opacity-15"
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-35"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 to-green-800/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary/75 to-green-800/65" />
         <div className="relative max-w-2xl">
           <p className="mb-3 inline-flex rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-orange-100">
             Get In Touch
@@ -147,9 +143,18 @@ function Contact() {
 
           <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
             <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">Business Hours</p>
-            <p className="mt-2 text-sm text-slate-700">Monday – Friday: 8am – 5pm</p>
-            <p className="text-sm text-slate-700">Saturday: 8am – 1pm</p>
-            <p className="text-sm text-slate-500">Sunday: Closed</p>
+            <p className="mt-2 text-sm text-slate-700">Monday – Friday: 9:00 – 17:00</p>
+            <p className="text-sm text-slate-500">Saturday: Closed</p>
+            <p className="text-sm text-slate-700">Sunday: 9:00 – 13:00</p>
+          </div>
+
+          <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+            <img
+              src="/images/operations-office.webp"
+              alt="TC Energy logistics team ready to assist"
+              className="h-44 w-full object-cover object-center"
+              loading="lazy"
+            />
           </div>
         </motion.aside>
 
@@ -203,13 +208,21 @@ function Contact() {
                 <textarea id="message" name="message" rows="5" required value={form.message} onChange={handleChange} className={inputClass} placeholder="Tell us about your logistics or delivery needs..." />
               </div>
 
-              <button
-                type="submit"
-                disabled={status === 'loading'}
-                className="w-full rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition hover:bg-orange-600 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
-              >
-                {status === 'loading' ? 'Sending...' : 'Send Message'}
-              </button>
+              <div className="space-y-2">
+                <button
+                  type="submit"
+                  disabled={status === 'loading'}
+                  className="w-full rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition hover:bg-orange-600 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+                >
+                  {status === 'loading' ? 'Sending...' : 'Send Message'}
+                </button>
+                <p className="text-xs text-slate-400">
+                  By submitting this form, you agree to our{' '}
+                  <Link to="/terms" className="text-slate-500 underline underline-offset-2 hover:text-primary">Terms & Conditions</Link>
+                  {' '}and{' '}
+                  <Link to="/privacy" className="text-slate-500 underline underline-offset-2 hover:text-primary">Privacy Policy</Link>.
+                </p>
+              </div>
 
               {status === 'success' && (
                 <motion.p
@@ -217,7 +230,7 @@ function Contact() {
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                 >
-                  ✓ Message sent! We&apos;ll be in touch soon.
+                  ✓ Thank you. We will reply to you soon.
                 </motion.p>
               )}
             </form>

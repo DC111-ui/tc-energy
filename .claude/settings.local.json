@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp \"C:/Users/Admin/Desktop/TC Energy/Media/To-be-used-on-site/farmers-hub-new.PNG\" \"C:/Users/Admin/Desktop/TC Energy/tc-energy/public/images/farmers-hub-new.png\")",
+      "Bash(cp \"C:/Users/Admin/Desktop/TC Energy/Media/To-be-used-on-site/how-we-are-different-new.PNG\" \"C:/Users/Admin/Desktop/TC Energy/tc-energy/public/images/how-we-are-different-new.png\")",
+      "Bash(find 'C:/Users/Admin/Desktop/TC Energy/tc-energy/src' -name App.*)"
+    ]
+  }
+}

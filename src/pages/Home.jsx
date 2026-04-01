@@ -28,8 +28,8 @@ function Home() {
           alt="TC Energy truck on the open road"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-slate-950/65" />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-900/65 to-slate-900/30" />
+        <div className="absolute inset-0 bg-slate-950/35" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/60 via-slate-900/40 to-slate-900/10" />
 
         <motion.div
           className="relative max-w-3xl"

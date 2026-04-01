@@ -7,11 +7,15 @@ import ScrollToTop from './components/ScrollToTop';
 import WhatsAppButton from './components/WhatsAppButton';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Disclaimer from './pages/Disclaimer';
 import FarmersHub from './pages/FarmersHub';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
+import Privacy from './pages/Privacy';
+import RefundPolicy from './pages/RefundPolicy';
 import ServiceDetail from './pages/ServiceDetail';
 import Services from './pages/Services';
+import Terms from './pages/Terms';
 
 function App() {
   const location = useLocation();
@@ -28,6 +32,10 @@ function App() {
             <Route path="/farmers-hub" element={<PageTransition><FarmersHub /></PageTransition>} />
             <Route path="/services/:serviceSlug" element={<PageTransition><ServiceDetail /></PageTransition>} />
             <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+            <Route path="/terms" element={<PageTransition><Terms /></PageTransition>} />
+            <Route path="/privacy" element={<PageTransition><Privacy /></PageTransition>} />
+            <Route path="/disclaimer" element={<PageTransition><Disclaimer /></PageTransition>} />
+            <Route path="/refund-policy" element={<PageTransition><RefundPolicy /></PageTransition>} />
             <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
           </Routes>
         </AnimatePresence>

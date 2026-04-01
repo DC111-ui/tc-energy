@@ -1,15 +1,12 @@
 import { motion } from 'framer-motion';
 
 const trustedCompanies = [
-  { name: 'Arch 360 Branding',       logo: '/logos/arch-360.jfif' },
   { name: 'Eurobath and Tile',        logo: '/logos/euro.png' },
-  { name: 'Eurotrend',                logo: '/logos/euro-trend.png' },
   { name: 'FRD Poultry and Farming',  logo: '/logos/frd.jpg' },
-  { name: 'Gelmar',                   logo: '/logos/gelma.png' },
-  { name: 'Lifestyle Ceramics',       logo: '/logos/life-style.png' },
   { name: 'Makro',                    logo: '/logos/makro.png' },
   { name: 'Builders',                 logo: '/logos/builders.jpg' },
   { name: 'Blue Skies Gas',           logo: '/logos/blue-skies.png' },
+  { name: '4 Oceans',                 logo: '/logos/4oceans-logo.png' },
 ];
 
 const trustPoints = ['Consistent delivery timelines', 'Careful cargo handling', 'Clear operational communication'];

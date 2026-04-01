@@ -68,14 +68,15 @@ const valueCards = [
 ];
 
 const clientSegments = [
-  'Furniture companies',
-  'Retail stores',
-  'Construction companies',
-  'Small businesses & e-commerce sellers',
-  'Importers & exporters',
-  'Student accommodations',
-  'Corporate offices',
-  'Individuals relocating',
+  { name: 'Furniture companies' },
+  { name: 'Retail stores' },
+  { name: 'Construction companies' },
+  { name: 'Small businesses & e-commerce sellers' },
+  { name: 'Importers & exporters' },
+  { name: 'Student accommodations' },
+  { name: 'Corporate offices' },
+  { name: 'Individuals relocating' },
+  { name: 'Individuals', description: 'Moving, deliveries, and personal logistics solutions.' },
 ];
 
 const whyChooseUs = ['Efficiency', 'Reliability', 'Flexibility', 'Affordability', 'Quality', 'Accessibility'];
@@ -88,9 +89,9 @@ function About() {
         <img
           src="/images/truck-highway-sunset.webp"
           alt="TC Energy truck on South African highway"
-          className="absolute inset-0 h-full w-full object-cover opacity-25"
+          className="absolute inset-0 h-full w-full object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary/85 via-secondary/80 to-green-800/75" />
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary/55 via-secondary/50 to-green-800/45" />
 
         <div className="relative max-w-3xl">
           <p className="mb-3 inline-flex rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-orange-100">
@@ -233,9 +234,10 @@ function About() {
           <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Who We Serve</h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {clientSegments.map((segment) => (
-            <article key={segment} className="rounded-2xl border border-slate-200 bg-white px-4 py-5 shadow-sm">
-              <p className="text-sm font-semibold text-slate-700">{segment}</p>
+          {clientSegments.map(({ name, description }) => (
+            <article key={name} className="rounded-2xl border border-slate-200 bg-white px-4 py-5 shadow-sm">
+              <p className="text-sm font-semibold text-slate-700">{name}</p>
+              {description && <p className="mt-1 text-xs text-slate-500">{description}</p>}
             </article>
           ))}
         </div>
@@ -307,7 +309,7 @@ function About() {
 
       <section className="overflow-hidden rounded-3xl border border-green-200 bg-green-50">
         <img
-          src="/images/residential-service-delivery.webp"
+          src="/images/how-we-are-different-new.png"
           alt="TC Energy driver completing a customer delivery"
           className="h-56 w-full object-cover sm:h-64"
           loading="lazy"
